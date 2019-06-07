@@ -1,6 +1,9 @@
 #' @importFrom httr oauth_endpoint oauth_app oauth2.0_token
-bq_endpoint <- oauth_endpoint(NULL, "auth", "token",
-  base_url = "https://accounts.google.com/o/oauth2"
+bq_endpoint <- oauth_endpoint(
+      base_url = "https://accounts.google.com/o/oauth2",
+      authorize = "https://accounts.google.com/o/oauth2/v2/auth",
+      access = "https://oauth2.googleapis.com/token",
+      revoke = "https://oauth2.googleapis.com/revoke"
 )
 bq_scopes <- c(
   "https://www.googleapis.com/auth/bigquery",
